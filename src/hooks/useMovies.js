@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo, Children } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import { searchMovies } from '../services/movies.js'
 
 export function useMovies ({ search, sort }) {
