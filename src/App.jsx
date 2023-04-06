@@ -46,9 +46,9 @@ function App() {
     debounce(search => {
     console.log('search', search)
     getMovies({ search })
-  }, 300)
-  , [getMovies]
-)
+    }, 300)
+    , [getMovies]
+  )
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -67,22 +67,25 @@ function App() {
 
   return (
     <div className='page'>
-
       <header>
-        <h1>Search bar movies</h1>
+        <h1>Finde the best movies</h1>
         <form className='form' onSubmit={handleSubmit}>
           <input
             style={{ border: '1px solid transparent', borderColor: error ? 'red' : 'transparent' }} onChange={handleChange}
             value={search}
             name='query'
-            placeholder="Avenger, Star Wars, The Matrix..."
+            placeholder="Type here..."
           />
-          <input type="checkbox" onChange={handleSort} checked={sort}/>
           <button type='submit'>Search</button>
+          <div className="content">
+            <input text='sortby' type="checkbox" onChange={handleSort} checked={sort}/>
+            <p className="Text-checkbox">
+              Sort by year
+            </p>
+          </div>
         </form>
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </header>
-
       <main>
         {
           loading ? <p>Loading...</p> : <Movies movies={movies} />
