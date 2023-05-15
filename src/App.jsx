@@ -68,7 +68,7 @@ function App() {
   return (
     <div className='page'>
       <header>
-        <h1>Finde the best movies</h1>
+        <h1>Find the best movies 🍿</h1>
         <form className='form' onSubmit={handleSubmit}>
           <input
             style={{ border: '1px solid transparent', borderColor: error ? 'red' : 'transparent' }} onChange={handleChange}
